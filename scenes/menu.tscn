@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgy0mvubl8y05"]
+
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_7lrve"]
+[ext_resource type="PackedScene" uid="uid://dd3ev4svegued" path="res://scenes/shared/background.tscn" id="2_dsixj"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_7lrve")
+
+[node name="StartGameBtn" type="Button" parent="."]
+offset_left = 347.0
+offset_top = 397.0
+offset_right = 812.0
+offset_bottom = 538.0
+theme_override_font_sizes/font_size = 56
+text = "Start"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 563.0
+offset_right = 675.0
+offset_bottom = 615.0
+theme_override_font_sizes/font_size = 31
+text = "Quit"
+
+[node name="Game Title" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 120.0
+offset_right = 1006.0
+offset_bottom = 278.0
+theme_override_font_sizes/font_size = 116
+text = "HELLO WORLD
+"
+horizontal_alignment = 1
+
+[node name="Background" parent="." instance=ExtResource("2_dsixj")]
+
+[connection signal="pressed" from="StartGameBtn" to="." method="_start_game"]
+[connection signal="pressed" from="Quit" to="." method="_quit_game"]
